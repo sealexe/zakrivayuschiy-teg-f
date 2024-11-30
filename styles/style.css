@@ -115,18 +115,24 @@
   object-position: center;
 }
 
-/* .card__title {
+.card__title {
   font-family: var(--main-font);
   font-style: normal;
   font-weight: var(--heading-font-weight);
   font-size: 18px;
   line-height: 22px;
   min-height: 31px;
-  padding: 3px 24px 3px 10px;
+  padding: 3px 24px 5px 10px;
+}
+
+@media (width <= 375px) {
+  .card__title {
+    padding: 4px 10px 6px;
+  }
 }
 
 .card__text {
-  margin: 25px;
+  margin: 27px 25px 25px;
   display: flex;
   flex-direction: column;
   gap: 27px;
@@ -137,9 +143,18 @@
   line-height: 21px;
 }
 
+.like-buttons__wrapper {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0px 25px 25px;
+  gap: 12px; 
+}
+
 .card__like-button {
-  margin: 0px 25px 25px 541px;
   block-size: 38px;
+  inline-size: 130px;
+  padding: 12.5px 37px;
   background-color: transparent;
   border: 2px solid var(--accent-color);
   color: var(--font-color), #000;
@@ -148,8 +163,65 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
-} */
+  cursor: pointer;
+}
 
+.card__icon-button {
+  background-color: transparent;
+  border: none;
+  padding: 0px;
+  inline-size: 39px;
+  block-size: 36px;
+  cursor: pointer;
+}
 
+.like-icon {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
+.footer {
+  margin: 0px auto;
+  padding: 50px clamp(2.15625rem, -1.0458rem + 13.662vw, 11.25rem) 103px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+}
 
+.save__button {
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  font-family: var(--accent-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 90%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  min-width: 335px;
+  padding: 18.5px 21px 18.5px 19px;
+  white-space: nowrap; /* костыль?? */
+}
+
+.save-button__img {
+  max-width: 21px;
+  height: auto;
+}
+
+@media (width <= 375px) {
+  .save__button {
+    flex-direction: column;
+    padding: 15px 19.5px 15px 20.5px;
+  }
+
+  .save-button__img {
+    max-width: 28px;
+    height: auto;
+  }
+}
