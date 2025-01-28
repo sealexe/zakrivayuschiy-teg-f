@@ -115,6 +115,11 @@
   object-position: center;
 }
 
+.card__lable {
+  font-family: var(--accent-font);
+  color: var(--font-color), #000;
+}
+
 .card__title {
   font-family: var(--main-font);
   font-style: normal;
