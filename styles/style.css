@@ -94,6 +94,54 @@
   content: "▶";
   position: absolute;
   left: -20px;
+  color: var(--low-opacity-color);
+  animation: arrow 0.5s infinite ease-in-out alternate;
+}
+
+@keyframes arrow {
+  0% {
+    translate: 0px;
+  }
+  100% {
+    translate: 4px;
+  }
+}
+
+.theme-menu__button:disabled {
+  color: var(--low-opacity-color);
+  pointer-events: none;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  color: var(--low-opacity-color);
+}
+
+.theme-menu__button:hover {
+  color: var(--low-opacity-color);
+  transition: color 0.3s;
+}
+
+.theme-menu__button:focus-visible {
+  outline: none;
+  color: var(--low-opacity-color);
+  transition: color 0.3s;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 2px;
+  background-color: var(--low-opacity-color);
+  transform: scale(0);
+}
+
+.theme-menu__button:focus-visible::after {
+  color: var(--low-opacity-color);
+  transform: scale(1);
+  transition: transform 0.3s;
 }
 
 .content {
@@ -115,9 +163,37 @@
   object-position: center;
 }
 
+.card-image__container {
+  display: flex;
+  position: relative;
+}
+
 .card__lable {
-  font-family: var(--accent-font);
+  position: absolute;
+  top: 25px;
+  right: 13px;
+  font-family: var(--accent-font), 'Press Start 2P';
   color: var(--font-color), #000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  text-shadow:
+    -1px 0 #fff, 
+   0 1px #fff, 
+   1px 0 #fff, 
+   0 -1px #fff;
+  opacity: 50%;
+}
+
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .card__lable {
+      -webkit-text-stroke: 1px #fff;
+      text-stroke: 1px #fff;
+      text-shadow: none;
+  }
 }
 
 .card__title {
@@ -170,6 +246,29 @@
   line-height: 90%;
   cursor: pointer;
 }
+
+.button__effect:focus {
+  outline: none;
+}
+
+.button__effect:focus-visible {
+  box-shadow: 2px 2px 0 0 var(--accent-color);
+  transition: 0.3s;
+}
+
+/* .button__effect::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+} */
+
+/* .button__effect:hover::after {
+  transform: scale(1);
+  transition: transform 0.3s;
+} */
+
 
 .card__icon-button {
   background-color: transparent;
