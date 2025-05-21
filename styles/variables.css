@@ -10,4 +10,5 @@
     --accent-font-color: #000;
     --background-color: #fff;
     --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+    --lable-stroke-color: #fff;
 }

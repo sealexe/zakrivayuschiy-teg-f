@@ -40,13 +40,6 @@
   border: 2px solid var(--accent-color, #000); /* проверить на currentcolor */
 }
 
-@media (width <= 375px) {
-  .header {
-    inline-size: 100%;
-    padding: 120px clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
-  }
-}
-
 .title {
   font-family: var(--accent-font), monospace;
   font-weight: 400;
@@ -65,7 +58,7 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-.content__list {
+.content__card-list {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -80,19 +73,53 @@
   font-variation-settings: 'wgth' var(--title-weight);
   padding: 5px 10px;
   line-height: 1.2;
+  border-block-end: 2px solid var(--accent-color, #000);
+}
+
+.card__image-container {
+  display: flex;
+  position: relative;
+  max-block-size: 696px;
+  aspect-ratio: 1;
+  border-block-end: 2px solid var(--accent-color, #000);
 }
 
 .card__image {
   display: block;
-  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
-  max-block-size: 696px;
+}
+
+.card__image-lable {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font, monospace);
+  color: #000;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 400;
+  opacity: 50%;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  text-shadow:
+    -1px 0 var(--lable-stroke-color), 
+   0 1px var(--lable-stroke-color), 
+   1px 0 var(--lable-stroke-color), 
+   0 -1px var(--lable-stroke-color);
+}
+
+@supports((text-stroke: 1px var(--lable-stroke-color)) or (-webkit-text-stroke: 1px var(--lable-stroke-color))) {
+    .card__image-lable {
+        -webkit-text-stroke: 1px var(--lable-stroke-color);
+        text-stroke: 1px var(--lable-stroke-color);
+        text-shadow: none;
+    }
 }
 
 .card__content {
   padding: 25px;
-  display: grid;
-  gap: 25px;
 }
 
 .card__text {
@@ -103,14 +130,23 @@
 }
 
 .buttons__container {
+  margin-block-start: 25px;
   justify-self: end;
   display: flex;
   justify-content: space-between;
-  gap: 12px;
+  gap: 7px;
 }
 
-.card__button {
+.button {
   background-color: transparent;
+  border: 2px solid var(--accent-color, #000);
+}
+
+.button__text {
+  font-family: var(--accent-font, monospace);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 90%;
 }
 
 .card__icon-button {
@@ -121,7 +157,8 @@
 .card__like-button {
   font-family: var(--accent-font, monospace);
   border: 2px solid currentColor;
-  padding: 12px 35px;
+  inline-size: 130px;
+  block-size: 34px;
   font-size: 14px;
   font-weight: 400;
   line-height: 90%;
@@ -131,6 +168,97 @@
   display: block;
   width: 39px;
   height: 36px;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 50px 0 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__save-button {
+  padding: 15px 19px;
+  border: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__save-button-icon {
+  inline-size: 21px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  color: var(--accent-color, #000);
+}
+
+.save__dialog[open] {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+  flex-direction: column;
+  inline-size: 353px;
+  block-size: 191px;
+  background-color: #fff;
+  border: 2px solid var(--accent-color, #000);
+  justify-content: space-between;
+}
+
+.save__dialog-text {
+  font-family: var(--accent-font, monospace);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: inherit;
+  display: grid;
+  grid-template-columns: min-content 234px;
+  gap: 20px;
+  align-items: center;
+}
+
+.save__dialog-icon {
+  display: block;
+  inline-size: 39px;
+  block-size: 39px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.save__dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.page:has(.save__dialog[open]) {
+  overflow: hidden;
+}
+
+
+@media (width <= 375px) {
+  .card__image-lable{
+    right: 11px;
+  }
+
+  .footer__save-button {
+    flex-direction: column;
+  }
+
+  .header {
+    padding: 120px clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  }
+
+  .card__title {
+    padding: 3px 10px 4px;
+  }
+
+  .content-width {
+    inline-size: 100%;
+  }
+
+  .footer__save-button-icon {
+    inline-size: 29px;
+    aspect-ratio: 1;
+  }
 }
 
 
