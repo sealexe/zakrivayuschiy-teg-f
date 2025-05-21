@@ -3,12 +3,28 @@
 :root {
     --main-font: 'Inter-Variable';
     --accent-font: 'PressStart2P-Regular';
+	--accent-color: #000;
     --main-font-size: 18px;
     --text-weight: 400;
     --title-weight: 700;
     --main-font-color: #000;
     --accent-font-color: #000;
+	--button-text-color: #fff;
     --background-color: #fff;
     --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     --lable-stroke-color: #fff;
+    --background-image: repeating-linear-gradient(
+		90deg,
+		#d3d3d3 0px,
+		#d3d3d3 2px,
+		transparent 2px,
+		transparent 4px
+	),
+	repeating-linear-gradient(
+		0deg,
+		transparent 0px,
+		transparent 2px,
+		#d3d3d3 2px,
+		#d3d3d3 4px
+	), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 }
