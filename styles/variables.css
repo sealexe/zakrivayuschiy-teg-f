@@ -27,4 +27,8 @@
 		#d3d3d3 2px,
 		#d3d3d3 4px
 	), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+	--contour-color: #000;
+	--animation-fill-color: #ff0000;
+	--core-color: #fff;
+	--main-body-color: #ff0000;
 }
