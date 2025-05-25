@@ -21,7 +21,7 @@
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: 'wgth' var(--main-font-weight, 400);
+  font-variation-settings: 'wght' var(--main-font-weight, 400);
 }
 
 .content {
@@ -78,7 +78,7 @@
   padding: 5px 10px;
   font-size: 18px;
   line-height: 1.2;
-  font-variation-settings: 'wgth' var(--card-title-weight, 700);
+  font-variation-settings: 'wght' var(--card-title-weight, 700);
 }
 
 .card__image-container {
@@ -327,7 +327,7 @@
 }
 
 @media (width <= 375px) {
-  .card__image-lable{
+  .card__image-lable {
     right: 11px;
   }
 
