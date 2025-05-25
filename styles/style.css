@@ -11,17 +11,17 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
+  color: var(--maint-font-color, #000);
   font-family: var(--main-font, sans-serif);
   font-size: var(--main-font-size, 18px);
-  font-variation-settings: 'wgth' var(--text-weight);
   line-height: 1.2;
-  color: var(--maint-font-color, #000);
   background-color: var(--background-color, #fff);
-  background-attachment: fixed;
-  background-size: cover;
   background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: 'wgth' var(--main-font-weight, 400);
 }
 
 .content {
@@ -34,32 +34,32 @@
 
 .header {
   display: flex;
-  background-color: #fff;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
-  padding: 128px clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
   margin: 100px auto;
-  border: 2px solid var(--accent-color, #000); /* проверить на currentcolor */
+  border: 2px solid var(--accent-color, #000);
+  padding: 128px clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  background-color: var(--background-color, #fff);
 }
 
 .title {
-  font-family: var(--accent-font), monospace;
-  font-weight: 400;
-  line-height: 100%;
   color: var(--accent-font-color, #000);
+  font-family: var(--accent-font, monospace);
+  font-weight: var(--accent-font-weight, 400);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 100%;
   text-transform: uppercase;
 }
 
 .subtitle {
-  font-family: var(--accent-font), monospace;
-  text-transform: uppercase;
-  font-weight: 400;
-  line-height: 100%;
   color: var(--accent-font-color, #000);
+  font-family: var(--accent-font, monospace);
+  font-weight: var(--accent-font-weight, 400);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 100%;
+  text-transform: uppercase;
 }
 
 .content__card-list {
@@ -69,39 +69,39 @@
 }
 
 .card {
-  border: 2px solid var(--accent-color, #000);
-  background-color: #fff;
+  border: 2px solid currentColor;
+  background-color: var(--card-background-color, #fff);
 }
 
 .card__title {
-  font-size: 18px;
-  font-variation-settings: 'wgth' var(--title-weight);
-  padding: 5px 10px;
-  line-height: 1.2;
   border-block-end: 2px solid var(--accent-color, #000);
+  padding: 5px 10px;
+  font-size: 18px;
+  line-height: 1.2;
+  font-variation-settings: 'wgth' var(--card-title-weight, 700);
 }
 
 .card__image-container {
-  display: flex;
   position: relative;
-  max-block-size: 696px;
-  aspect-ratio: 1;
+  display: flex;
   border-block-end: 2px solid var(--accent-color, #000);
   overflow: hidden;
+  max-block-size: 696px;
+  aspect-ratio: 1;
 }
 
 .img-set {
   display: block;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .card__image {
   display: block;
   object-fit: cover;
   object-position: center;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .mac-img {
@@ -140,26 +140,26 @@
   position: absolute;
   top: 25px;
   right: 25px;
-  font-family: var(--accent-font, monospace);
-  color: #000;
-  font-size: 14px;
-  line-height: 100%;
-  font-weight: 400;
   opacity: 50%;
+  color: var(--accent-color, #000);
+  font-family: var(--accent-font, monospace);
+  font-weight: var(--accent-font-weight, 400);
+  font-size: var(--accent-font-size, 14px);
+  line-height: 100%;
   text-transform: uppercase;
-  mix-blend-mode: hard-light;
   text-shadow:
-    -1px 0 var(--lable-stroke-color), 
-   0 1px var(--lable-stroke-color), 
-   1px 0 var(--lable-stroke-color), 
-   0 -1px var(--lable-stroke-color);
+    -1px 0 var(--lable-stroke-color, #fff), 
+   0 1px var(--lable-stroke-color, #fff), 
+   1px 0 var(--lable-stroke-color, #fff), 
+   0 -1px var(--lable-stroke-color, #fff);
+  mix-blend-mode: hard-light;
 }
 
 @supports((text-stroke: 1px var(--lable-stroke-color)) or (-webkit-text-stroke: 1px var(--lable-stroke-color))) {
     .card__image-lable {
-        -webkit-text-stroke: 1px var(--lable-stroke-color);
-        text-stroke: 1px var(--lable-stroke-color);
         text-shadow: none;
+        -webkit-text-stroke: 1px var(--lable-stroke-color, #fff);
+        text-stroke: 1px var(--lable-stroke-color, #fff);
     }
 }
 
@@ -170,22 +170,23 @@
 .card__text {
   display: flex;
   flex-direction: column;
-  gap: 27px;
   justify-content: space-between;
+  gap: 27px;
 }
 
 .buttons__container {
-  margin-block-start: 25px;
-  justify-self: end;
   display: flex;
-  justify-content: space-between;
-  gap: 7px;
+  justify-content: flex-end;
   align-items: center;
+  gap: 7px;
+  margin-block-start: 25px;
 }
 
 .button {
-  border: 2px solid var(--accent-color, #000);
   position: relative;
+  border: 2px solid var(--accent-color, #000);
+  color: var(--button-text-color, #fff);
+  background-color: var(--button-background-color, #fff);
 }
 
 .button:focus {
@@ -201,35 +202,34 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--accent-color, #000);
-  transform: scaleX(0);
-  transition: 0.5s ease-in-out;
-  transform-origin: left;
   z-index: 0;
+  background-color: var(--accent-color, #000);
+  transition: 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .button:hover::after {
-  transform: scaleX(1);
   transition: 0.5s ease-in-out;
+  transform: scaleX(1);
 }
 
 .button__text {
-  font-family: var(--accent-font, monospace);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 90%;
-  color: var(--button-text-color, #fff);
-  mix-blend-mode: difference;
   position: relative;
   z-index: 1;
+  font-family: var(--accent-font, monospace);
+  font-weight: var(--accent-font-weight, 400);
+  font-size: var(--accent-font-size, 14px);
+  line-height: 90%;
+  mix-blend-mode: difference;
 }
 
 .card__icon-button {
   border: 2px solid transparent;
   padding: 0;
   background-color: transparent;
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 36px;
 }
 
 .card__icon-button:focus {
@@ -245,77 +245,71 @@
   font-family: var(--accent-font, monospace);
   inline-size: 130px;
   block-size: 36px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 90%;
-  background-color: #fff;
 }
 
 .like-icon {
   display: block;
-  width: 100%;
-  height: 100%;
   object-fit: contain;
   object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .footer {
-  margin: 0 auto;
-  padding: 50px 0 100px;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  padding: 50px 0 100px;
 }
 
 .footer__save-button {
-  padding: 15px 19px;
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #fff;
+  padding: 15px 20px;
 }
 
 .footer__save-button-icon {
-  inline-size: 21px;
-  aspect-ratio: 1;
+  z-index: 1;
   object-fit: contain;
   color: var(--button-text-color, #fff);
+  inline-size: 21px;
+  aspect-ratio: 1;
   mix-blend-mode: difference;
-  z-index: 1;
 }
 
 .save__dialog[open] {
   display: flex;
-  padding: 30px;
-  gap: 30px;
   flex-direction: column;
-  inline-size: 353px;
-  block-size: 191px;
-  background-color: #fff;
-  border: 2px solid var(--accent-color, #000);
   justify-content: space-between;
+  gap: 30px;
+  border: 2px solid var(--accent-color, #000);
+  padding: 30px;
+  background-color: var(--background-color, #fff);
+  max-inline-size: 357px;
+  block-size: 191px;
 }
 
-/* попробовать через flex-shrink */
-
 .save__dialog-text {
-  font-family: var(--accent-font, monospace);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 150%;
-  text-transform: uppercase;
-  color: inherit;
   display: grid;
   grid-template-columns: min-content 234px;
-  gap: 20px;
   align-items: center;
+  gap: 20px;
+  color: var(--accent-font-color, #000);
+  font-family: var(--accent-font, monospace);
+  font-weight: var(--accent-font-weight, 400);
+  font-size: var(--accent-font-size, 14px);
+  line-height: 150%;
+  text-transform: uppercase;
 }
 
 .save__dialog-icon {
   display: block;
-  inline-size: 39px;
-  block-size: 39px;
+  flex-shrink: 0;
   object-fit: contain;
   object-position: center;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .save__dialog::backdrop {
@@ -323,13 +317,13 @@
 }
 
 .page:has(.save__dialog[open]) {
+  padding-right: 16px;
   overflow: hidden;
 }
 
 .save__dialog-button {
   block-size: 34px;
   max-inline-size: 293px;
-  background-color: #fff;
 }
 
 @media (width <= 375px) {
@@ -355,8 +349,13 @@
 
   .footer__save-button-icon {
     inline-size: 29px;
-    aspect-ratio: 1;
   }
+
+  .save__dialog[open] {
+    padding: 30px 42px;
+    max-inline-size: 341px;
+  }
+
 }
 
 

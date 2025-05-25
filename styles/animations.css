@@ -48,6 +48,10 @@
     transition: fill 0.3s;
 }
 
+.contour {
+    transition: fill 0.1s;
+}
+
 .like-icon:hover .core {
     fill: var(--contour-color, #000);
     transition: fill 0.3s;
@@ -81,10 +85,6 @@
 .like-icon.is-liked .contour {
     fill: var(--animation-fill-color, #ff0000);
     transition: fill 0.3s 0.06s;
-}
-
-.contour {
-    transition: fill 0.1s;
 }
 
 .like-icon.is-liked .heart {

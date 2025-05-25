@@ -5,12 +5,16 @@
     --accent-font: 'PressStart2P-Regular';
 	--accent-color: #000;
     --main-font-size: 18px;
-    --text-weight: 400;
-    --title-weight: 700;
+	--accent-font-size: 14px;
+    --main-font-weight: 400;
+	--accent-font-weight: 400;
+    --card-title-weight: 700;
     --main-font-color: #000;
     --accent-font-color: #000;
 	--button-text-color: #fff;
     --background-color: #fff;
+	--card-background-color: #fff;
+	--button-background-color: #fff;
     --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
     --lable-stroke-color: #fff;
     --background-image: repeating-linear-gradient(
