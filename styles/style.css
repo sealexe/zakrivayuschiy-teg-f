@@ -77,14 +77,14 @@
   border-block-end: 2px solid var(--accent-color, #000);
   padding: 5px 10px;
   font-size: 18px;
-  line-height: 1.2;
+  line-height: 1.22;
   font-variation-settings: 'wght' var(--card-title-weight, 700);
 }
 
 .card__image-container {
   position: relative;
-  margin: 0;
   display: flex;
+  margin: 0;
   border-block-end: 2px solid var(--accent-color, #000);
   overflow: hidden;
   max-block-size: 696px;
@@ -186,7 +186,10 @@
 .button {
   position: relative;
   border: 2px solid var(--accent-color, #000);
-  color: var(--button-text-color, #fff);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
+  font-weight: var(--accent-font-weight, 400);
+  font-size: var(--accent-font-size, 14px);
+  line-height: 90%;
   background-color: var(--button-background-color, #fff);
 }
 
@@ -218,10 +221,7 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font, monospace), 'Courier New', monospace;
-  font-weight: var(--accent-font-weight, 400);
-  font-size: var(--accent-font-size, 14px);
-  line-height: 90%;
+  color: var(--button-text-color, #fff);
   mix-blend-mode: difference;
 }
 
@@ -230,7 +230,7 @@
   padding: 0;
   background-color: transparent;
   inline-size: 39px;
-  block-size: 36px;
+  block-size: 38px;
 }
 
 .card__icon-button:focus {
@@ -245,32 +245,18 @@
 .card__like-button {
   font-family: var(--accent-font, monospace), 'Courier New', monospace;
   inline-size: 130px;
-  block-size: 36px;
+  block-size: 38px;
 }
 
-.like-icon {
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 50px 0 100px;
-}
-
-.footer__save-button {
+.save__button {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 50px auto 100px;
   padding: 15px 20px;
 }
 
-.footer__save-button-icon {
+.save__button-icon {
   z-index: 1;
   object-fit: contain;
   color: var(--button-text-color, #fff);
@@ -287,13 +273,12 @@
   border: 2px solid var(--accent-color, #000);
   padding: 30px;
   background-color: var(--background-color, #fff);
-  max-inline-size: 357px;
-  block-size: 191px;
+  max-inline-size: 353px;
 }
 
 .save__dialog-text {
   display: grid;
-  grid-template-columns: min-content 234px;
+  grid-template-columns: min-content 1fr;
   align-items: center;
   gap: 20px;
   color: var(--accent-font-color, #000);
@@ -306,7 +291,6 @@
 
 .save__dialog-icon {
   display: block;
-  flex-shrink: 0;
   object-fit: contain;
   object-position: center;
   inline-size: 39px;
@@ -322,7 +306,7 @@
 }
 
 .save__dialog-button {
-  block-size: 34px;
+  block-size: 38px;
   max-inline-size: 293px;
 }
 
@@ -331,7 +315,7 @@
     right: 11px;
   }
 
-  .footer__save-button {
+  .save__button {
     flex-direction: column;
   }
 
@@ -340,25 +324,23 @@
   }
 
   .card__title {
-    padding: 3px 10px 4px;
+    padding: 4px 10px 5.5px;
   }
 
   .content-width {
     inline-size: 100%;
   }
 
-  .footer__save-button-icon {
-    inline-size: 29px;
+  .save__button-icon {
+    inline-size: 28px;
+    block-size: 28px;
   }
 
   .save__dialog[open] {
-    padding: 30px 42px;
+    padding: 30px 40px;
     max-inline-size: 341px;
   }
-
 }
-
-
 
 
 
