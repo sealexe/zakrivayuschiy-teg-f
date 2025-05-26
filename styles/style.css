@@ -12,9 +12,9 @@
 
 .page {
   color: var(--maint-font-color, #000);
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, sans-serif), 'Arial', sans-serif;
   font-size: var(--main-font-size, 18px);
-  line-height: 1.2;
+  line-height: 117%;
   background-color: var(--background-color, #fff);
   background-image: var(--background-image);
   background-size: cover;
@@ -46,7 +46,7 @@
 
 .title {
   color: var(--accent-font-color, #000);
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   font-weight: var(--accent-font-weight, 400);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 100%;
@@ -55,7 +55,7 @@
 
 .subtitle {
   color: var(--accent-font-color, #000);
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   font-weight: var(--accent-font-weight, 400);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   line-height: 100%;
@@ -83,6 +83,7 @@
 
 .card__image-container {
   position: relative;
+  margin: 0;
   display: flex;
   border-block-end: 2px solid var(--accent-color, #000);
   overflow: hidden;
@@ -142,15 +143,15 @@
   right: 25px;
   opacity: 50%;
   color: var(--accent-color, #000);
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   font-weight: var(--accent-font-weight, 400);
   font-size: var(--accent-font-size, 14px);
   line-height: 100%;
   text-transform: uppercase;
   text-shadow:
-    -1px 0 var(--lable-stroke-color, #fff), 
-   0 1px var(--lable-stroke-color, #fff), 
-   1px 0 var(--lable-stroke-color, #fff), 
+    -1px 0 var(--lable-stroke-color, #fff),
+   0 1px var(--lable-stroke-color, #fff),
+   1px 0 var(--lable-stroke-color, #fff),
    0 -1px var(--lable-stroke-color, #fff);
   mix-blend-mode: hard-light;
 }
@@ -217,7 +218,7 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   font-weight: var(--accent-font-weight, 400);
   font-size: var(--accent-font-size, 14px);
   line-height: 90%;
@@ -242,7 +243,7 @@
 }
 
 .card__like-button {
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   inline-size: 130px;
   block-size: 36px;
 }
@@ -296,7 +297,7 @@
   align-items: center;
   gap: 20px;
   color: var(--accent-font-color, #000);
-  font-family: var(--accent-font, monospace);
+  font-family: var(--accent-font, monospace), 'Courier New', monospace;
   font-weight: var(--accent-font-weight, 400);
   font-size: var(--accent-font-size, 14px);
   line-height: 150%;
@@ -317,7 +318,6 @@
 }
 
 .page:has(.save__dialog[open]) {
-  padding-right: 16px;
   overflow: hidden;
 }
 

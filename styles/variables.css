@@ -1,24 +1,24 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --main-font: 'Inter-Variable';
-    --accent-font: 'PressStart2P-Regular';
-	--accent-color: #000;
-    --main-font-size: 18px;
-	--accent-font-size: 14px;
-    --main-font-weight: 400;
-	--accent-font-weight: 400;
-    --card-title-weight: 700;
-    --main-font-color: #000;
-    --accent-font-color: #000;
-	--button-text-color: #fff;
-    --background-color: #fff;
-	--card-background-color: #fff;
-	--button-background-color: #fff;
-    --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-    --lable-stroke-color: #fff;
-    --background-image: repeating-linear-gradient(
-		90deg,
+  --main-font: 'Inter-Variable';
+  --accent-font: 'PressStart2P';
+  --accent-color: #000;
+  --main-font-size: 18px;
+  --accent-font-size: 14px;
+  --main-font-weight: 400;
+  --accent-font-weight: 400;
+  --card-title-weight: 700;
+  --main-font-color: #000;
+  --accent-font-color: #000;
+  --button-text-color: #fff;
+  --background-color: #fff;
+  --card-background-color: #fff;
+  --button-background-color: #fff;
+  --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
+  --lable-stroke-color: #fff;
+  --background-image: repeating-linear-gradient(
+    90deg,
 		#d3d3d3 0px,
 		#d3d3d3 2px,
 		transparent 2px,
@@ -30,7 +30,8 @@
 		transparent 2px,
 		#d3d3d3 2px,
 		#d3d3d3 4px
-	), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+	),
+  linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 	--contour-color: #000;
 	--animation-fill-color: #ff0000;
 	--core-color: #fff;
